@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
+body {
+    background: linear-gradient(90deg,#1e44f1, #f08310);
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.body{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.logo{
+    width: auto;
+    height:10vmin;
+}
+
+/*form styling*/
+
+.form-container {
+    background: linear-gradient(90deg,#1e44f1, #f08310);
+    margin-left: 5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2vh;
+}
+
+#h2 {
+    font-family: 'Poppins';    font-size: 2.5vw;
+    color: #f0831e;
+    font-weight: 500;
+}
+
+.h4{
+    color: white;
+    font-family:'Open Sans',sans-serif;
+    font-size: 0.9vw;
+    font-weight:680;
+    
+}
+
+.field-container{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.field-container input {
+    height:2vw;
+    outline: none;
+    width:15vw;
+}
+
+.field-container label{
+    font-family: 'DM Sans';
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+.login-btn {
+
+    height:2vw;
+    width:10vw;
+    background-color:#f08310;
+    color: white;
+    border: none;
+    font-size: 1vw;
+
+}
+
+.h4color{
+    color: #f0831e;
+}
+
+.guestbtn {
+    width: 10vw;
+    margin-bottom: 2vh;
+}
+
+/*text styling*/
+
+.text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-left: 1px solid white;
+    padding-left: 2vw;
+}
+
+.h2 {
+    font-size: 1.4vw;
+    font-family: 'Open Sans';
+    color: white;
+}
+
+.slideshow {
+    width: 40vw; /* Adjust for larger screens */
+}
+
+.highlight{
+    font-size:1.2vw;
+}
+
+@media (max-width: 1000px) {
+
+    .body{
+        flex-wrap: wrap;
+        align-items:center ;
+        justify-content: center;
+    }
+
+    .form-container{
+        width: 100%;
+    }
+    .slideshow{
+        width:80%;
+    }
+
+    .h2{
+        font-size: 2vw;
+    }
+
+    #h2{
+        font-size: 5vw;
+    }
+
+    .h4{
+        font-size: 1.6vw;
+    }
+
+    .field-container input{
+        width:30vw;
+        height:4vw;
+    }
+    .field-container label{
+        font-size:2vw;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .body{
+        flex-wrap: wrap;
+        align-items:center ;
+        justify-content: center;
+    }
+
+    .form-container{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .form{
+        width: 100%;
+    }
+    .text{
+        width: 100%;
+        border-left:none;
+        border-top: 1px solid white;
+        margin-right: 3vw;
+        margin-top: 5vw;
+    }
+    .slideshow{
+        width:80%;
+    }
+
+    .h2{
+        font-size: 5vw;
+    }
+
+    #h2{
+        font-size: 8vw;
+    }
+
+    .h4{
+        font-size: 5vw;
+    }
+
+    .field-container input{
+        width:70vw;
+        height:7vw;
+    }
+    .field-container label{
+        font-size:5vw;
+    }
+
+    .login-btn {
+
+        width: 40vw;
+        height: 7vw;
+        font-size: 4vw;
+
+    }
+
+}
+    
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+/* Import slick-carousel's default styles */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* General styles for the carousel container */
+.carousel-container {
+    width: 100%; /* Full width of its container */
+    max-width: 600px; /* Set a maximum width for the carousel */
+    margin: 0 auto; /* Center the carousel container */
+  }
+  
+  /* Styles for the slider */
+  .slider {
+    width: 30vw ;
+    height: 30vw;
+  }
+  
+  /* Styles for the images within the carousel */
+  .slider img {
+    width: 100%; /* Make images fill the container width */
+    height: 100%; /* Set a specific height for the images */
+  }
+    
+    @media (max-width: 1000px) {
+        .slider {
+            width: 100% ;
+            height: auto;
+          }
+    }
+
+
+

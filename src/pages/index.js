@@ -1,107 +1,66 @@
-import React from 'react'
-import '../css/index.css'
-import icon from '../images/icon.png'
-import { useForm } from "react-hook-form";
-import ImageCarousel from '../components/carousel';
+import React, { useState } from 'react';
+import '../css/home.css';
+import { Link } from 'gatsby';
 
-
-
-const IndexPage = () => {
-
-  const { register, handleSubmit, formState: { errors } } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data); // Handle form submission
-  };
+export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className='main-container'>
-      <div className='header'>
-        <img className="logo" src={icon}></img>
-
-      </div>
-      <div className='body'>
-        <div className='form-container'>
-          <div className='form'>
-            <h2 id="h2">Login</h2>
-            <h4 className="h4 h4color">Sign in to continue</h4>
-            <form onSubmit={handleSubmit(onSubmit)}>
-        {/* Email Field */}
-        <div className='field-container'>
-          <label>Email</label>
-          <input
-            type="email"
-            {...register("email", {
-              required: "Email is required",
-              pattern: {
-                value: /^\S+@\S+$/i,
-                message: "Invalid email format",
-              },
-            })}
-          />
+    <div>
+      <header>
+        <div className="logo">
+          <img src="https://assets-eur.mkt.dynamics.com/791aa60e-647b-44e2-8424-729bbf43e300/-/media/medialib/3403bece32b14c68811ed94d0fa39a29.png" alt="Professional Academy" />
         </div>
-
-        {/* Password Field */}
-        <div className='field-container'>
-          <label>Password</label>
-          <input
-            type="password"
-            {...register("password", {
-              required: "Password is required",
-              minLength: {
-                value: 6,
-                message: "Password must be at least 6 characters long",
-              },
-            })}
-          />
+        <nav className={menuOpen ? 'open' : ''}>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><Link to="/login">Login</Link></li>
+          </ul>
+        </nav>
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
-
-        {/* Submit Button */}
-        <button className='login-btn' type="submit">Login</button>
-      </form>
-      <h4 className="h4 h4color">Forgot your username or password?</h4>
-      <h4 className='h4'>Cookies must be enabled in your browser</h4>
-      <h4 className='h4'>Some courses may allow guest access</h4>
-      <button className='login-btn guestbtn'>Login As A Guest</button>
-
-
-
-
-
+      </header>
+      <main>
+        <section className="hero">
+          <h1>Welcome to Professional Academy</h1>
+          <p>Your path to professional success starts here.</p>
+          <a href="#" className="cta-button">Get Started</a>
+        </section>
+        <section className="features">
+          <div className="feature">
+            <h2>Expert Instructors</h2>
+            <p>Learn from industry leaders with real-world experience.</p>
           </div>
-          <div className='text'>
-          <h2 className="h2">Is this your first time here?</h2>
-          <h4 className='h4 highlight'>Welcome to the Refinery</h4>
-          <h4 className='h4'>To access the Refinery you will need to use the login details you received by email
-           when you purchased the course or by a member of Professional Academy Head Office.</h4>
-           <h4 className='h4'>If you have since forgotten your updated password, please use the Forgotten password link and put the email address
-           linked to your profile in the email field only.</h4>
-           <div>
-           <h4 className='h4 highlight'>Important Notice to Learners</h4>
-           <h4 className='h4'>Using Al as means of writing assignments is academic fraud. All of the awarding bodies are vigilant of 
-            the misuse of Al so ensure you are aware of your awarding body's rules regarding Al</h4>
-            </div>
-
-
-          
-          
-
-
+          <div className="feature">
+            <h2>Flexible Learning</h2>
+            <p>Study at your own pace, on your own schedule.</p>
           </div>
-
-        </div>
-        <div className='slideshow'>
-        <ImageCarousel/>
-
-
-
-        </div>
-      </div>
-      
-      
-      
-       </div>
-  )
+          <div className="feature">
+            <h2>Certifications</h2>
+            <p>Earn recognized certifications to advance your career.</p>
+          </div>
+        </section>
+        <section className="testimonials">
+          <h2>What Our Students Say</h2>
+          <div className="testimonial">
+            <p>"Professional Academy helped me land my dream job!"</p>
+            <p>- Jane Doe</p>
+          </div>
+          <div className="testimonial">
+            <p>"The courses are well-structured and easy to follow."</p>
+            <p>- John Smith</p>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <p>&copy; 2024 Professional Academy. All rights reserved.</p>
+      </footer>
+    </div>
+  );
 }
-
-export default IndexPage
